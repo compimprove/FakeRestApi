@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: Publish to folder
-        run: copy '**' '/published/'
+        run: ls '*' && ls '/published/' && copy '*' '/published/'
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
