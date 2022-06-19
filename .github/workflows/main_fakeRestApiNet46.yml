@@ -15,15 +15,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      
-      - name: Publish to folder
-        run: ls '*' && ls '/published/' && copy '*' '/published/'
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: ASP-app
-          path: '/published/**'
+          path: '*'
 
   deploy:
     runs-on: windows-latest
